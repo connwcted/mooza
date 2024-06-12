@@ -133,3 +133,4 @@ public class Lane : MonoBehaviour
         ScoreManager.Miss();
     }
 }
+
