@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
-    private Animator playerAnimator;
     public GameObject player;
+    private Animator playerAnimator;
     private bool isAttacking = false;
+    private bool isJumping = false;
+    private Vector3 initialPosition;
 
     void Start()
     {
-        // Obtenha o componente Animator do jogador
-        playerAnimator = player.GetComponent<Animator>();
+            playerAnimator = player.GetComponent<Animator>();
+            initialPosition = player.transform.position;
     }
 
     void Update()
     {
-        // Verifique se a tecla J foi pressionada e o jogador não está atualmente atacando
-        if (Input.GetKeyDown(KeyCode.J) && !isAttacking)
+        // Verifique se a tecla J foi pressionada e o jogador não está atualmente atacando ou pulando
+        if (Input.GetKeyDown(KeyCode.J) && !isAttacking && !isJumping)
         {
             // Se o jogador estiver correndo, faça-o atacar
             if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
@@ -29,6 +31,12 @@ public class PlayerAnim : MonoBehaviour
             {
                 Run();
             }
+        }
+
+        // Verifique se a tecla F foi pressionada e o jogador não está atualmente pulando ou atacando
+        if (Input.GetKeyDown(KeyCode.F) && !isJumping && !isAttacking)
+        {
+            StartCoroutine(Jump());
         }
     }
 
@@ -60,5 +68,50 @@ public class PlayerAnim : MonoBehaviour
         // Faça o jogador voltar a correr
         Run();
     }
-}
 
+    // Corotina para fazer o jogador saltar
+    private IEnumerator Jump()
+    {
+        // Defina a variável "isJumping" como true para impedir outras ações durante o salto
+        isJumping = true;
+
+        // Aumente a posição Y do jogador em 3 unidades
+        Vector3 jumpPosition = initialPosition + new Vector3(0, 1.5f, 0);
+        float jumpTime = 0.2f; // Tempo para o jogador alcançar o ponto mais alto do salto
+
+        float elapsedTime = 0;
+        while (elapsedTime < jumpTime)
+        {
+            player.transform.position = Vector3.Lerp(initialPosition, jumpPosition, (elapsedTime / jumpTime));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Garanta que o jogador chegue exatamente na posição mais alta
+        player.transform.position = jumpPosition;
+
+        // Aguarde um pequeno tempo no ponto mais alto
+        yield return new WaitForSeconds(0.03f);
+
+        // Volte o jogador para a posição inicial
+        elapsedTime = 0;
+        while (elapsedTime < jumpTime)
+        {
+            player.transform.position = Vector3.Lerp(jumpPosition, initialPosition, (elapsedTime / jumpTime));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Garanta que o jogador volte exatamente para a posição inicial
+        player.transform.position = initialPosition;
+
+        // Defina a variável "isJumping" como false para permitir outras ações
+        isJumping = false;
+
+        // Volte a animação de corrida, se necessário
+        if (!isAttacking)
+        {
+            Run();
+        }
+    }
+}
