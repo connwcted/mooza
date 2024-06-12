@@ -15,7 +15,7 @@ public class Lane : MonoBehaviour
     private static GameObject currentPoints300Instance; // Variável para armazenar a instância atual do points300Prefab (agora é static)
     private static GameObject currentMissInstance; // Variável para armazenar a instância atual do missPrefab (agora é static)
 
-    private static Vector3 fixedPosition = new Vector3(-8.95f, 0f, 0f); // Posição fixa onde os prefabs aparecerão
+    private Vector3 fixedPosition; // Posição ajustável onde os prefabs aparecerão
 
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
@@ -25,7 +25,18 @@ public class Lane : MonoBehaviour
 
     void Start()
     {
-        // Inicialização, se necessária
+        // Atualizar a posição fixa baseada no tamanho da tela
+        UpdateFixedPosition();
+    }
+
+    void UpdateFixedPosition()
+    {
+        // Obter a câmera principal
+        Camera mainCamera = Camera.main;
+
+        // Definir a posição fixa no canto inferior esquerdo da tela
+        Vector3 screenPosition = new Vector3(0.15f, 0.6f, mainCamera.nearClipPlane + 10f); // Ajuste o 0.05f para posicionar os prefabs adequadamente
+        fixedPosition = mainCamera.ViewportToWorldPoint(screenPosition);
     }
 
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
