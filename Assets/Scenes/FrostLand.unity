@@ -956,6 +956,7 @@ MonoBehaviour:
   lanes:
   - {fileID: 1378080306}
   - {fileID: 163998806}
+  - {fileID: 0}
   songDelayInSeconds: 0
   marginOfError: 0.08
   inputDelayInMilliseconds: 0
