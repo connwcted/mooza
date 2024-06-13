@@ -956,9 +956,10 @@ MonoBehaviour:
   lanes:
   - {fileID: 1378080306}
   - {fileID: 163998806}
-  - {fileID: 0}
+  - {fileID: 1768264049}
+  - {fileID: 1310902787}
   songDelayInSeconds: 0
-  marginOfError: 0.08
+  marginOfError: 0.11
   inputDelayInMilliseconds: 0
   fileLocation: Frost1.mid
   noteTime: 1
@@ -1278,6 +1279,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 83909751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1310902786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1310902788}
+  - component: {fileID: 1310902787}
+  m_Layer: 0
+  m_Name: Lane4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1310902787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310902786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec829c33b971c94999d043945843f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteRestriction: 2
+  input: 102
+  notePrefab: {fileID: 9146432111750329632, guid: badeb28237553bf4f9e5899923956a7c, type: 3}
+  points300Prefab: {fileID: 7127149780842427447, guid: 7812ba6388f6f09488fdcadd4ddb1c60, type: 3}
+  missPrefab: {fileID: 997907292167326438, guid: 802c1a726075f25419088e57847792c6, type: 3}
+  timeStamps: []
+--- !u!4 &1310902788
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310902786}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.9, z: 9.96093}
+  m_LocalScale: {x: 0.889323, y: 0.889323, z: 0.889323}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378080305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1374,56 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.2233074, z: 9.96093}
+  m_LocalScale: {x: 0.889323, y: 0.889323, z: 0.889323}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1768264048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1768264050}
+  - component: {fileID: 1768264049}
+  m_Layer: 0
+  m_Name: Lane3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1768264049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768264048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec829c33b971c94999d043945843f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteRestriction: 0
+  input: 106
+  notePrefab: {fileID: 9146432111750329632, guid: ddeb095ee8e2ae54bb333473ab2f1403, type: 3}
+  points300Prefab: {fileID: 7127149780842427447, guid: 7812ba6388f6f09488fdcadd4ddb1c60, type: 3}
+  missPrefab: {fileID: 997907292167326438, guid: 802c1a726075f25419088e57847792c6, type: 3}
+  timeStamps: []
+--- !u!4 &1768264050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768264048}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.9, z: 9.96093}
   m_LocalScale: {x: 0.889323, y: 0.889323, z: 0.889323}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1535,5 +1636,7 @@ SceneRoots:
   - {fileID: 769467948}
   - {fileID: 1378080307}
   - {fileID: 163998807}
+  - {fileID: 1768264050}
+  - {fileID: 1310902788}
   - {fileID: 412087823}
   - {fileID: 180125277}

@@ -86,7 +86,7 @@ public class Lane : MonoBehaviour
             }
             if (timeStamp + marginOfError <= audioTime)
             {
-                Miss();
+                Miss(notes[inputIndex]); // Passar a nota falhada para o método Miss()
                 print($"Missed {inputIndex} note");
                 inputIndex++;
             }
@@ -113,7 +113,7 @@ public class Lane : MonoBehaviour
         ScoreManager.Hit();
     }
 
-    private void Miss()
+    private void Miss(Note missedNote)
     {
         // Se já existe uma instância do missPrefab, destrua-a
         if (currentMissInstance != null)
@@ -130,7 +130,12 @@ public class Lane : MonoBehaviour
             Destroy(currentPoints300Instance);
         }
 
+        // Destrua a nota falhada
+        if (missedNote != null)
+        {
+            Destroy(missedNote.gameObject);
+        }
+
         ScoreManager.Miss();
     }
 }
-
