@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenuButtons : MonoBehaviour
+
+public class LevelSelect : MonoBehaviour
 {
-    public Button playButton;
-    public Button quitButton;
+    public Button FrostLandButton;
+    public Button PhotoButton;
 
     // Start is called before the first frame update
     void Start()
@@ -23,16 +24,14 @@ public class MainMenuButtons : MonoBehaviour
 
     private void Awake()
     {
-        playButton.onClick.AddListener(() =>
+        FrostLandButton.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene("LevelSelect");
+            SceneManager.LoadScene("FrostLand");
         });
 
-        quitButton.onClick.AddListener(() =>
+        PhotoButton.onClick.AddListener(() =>
         {
-            Application.Quit();
+            SceneManager.LoadScene("Photo");
         });
     }
-
-
 }

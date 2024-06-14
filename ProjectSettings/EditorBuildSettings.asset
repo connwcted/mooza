@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: b5f982482b6d27348bb0ebb08b8c52f8
   - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: a2ae9c3b853b21d4ca1024c17823d7d0
+  - enabled: 1
     path: Assets/Scenes/FrostLand.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Photo.unity
+    guid: e823dde28999f364e8160fb6f17ad9cd
   m_configObjects: {}
