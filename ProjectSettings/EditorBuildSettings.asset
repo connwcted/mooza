@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Photo.unity
     guid: e823dde28999f364e8160fb6f17ad9cd
+  - enabled: 1
+    path: Assets/Scenes/Vinxis.unity
+    guid: 665e8f01af565614dad06d322a41a11f
   m_configObjects: {}

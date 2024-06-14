@@ -9,6 +9,7 @@ public class LevelSelect : MonoBehaviour
 {
     public Button FrostLandButton;
     public Button PhotoButton;
+    public Button VinxisButton;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,11 @@ public class LevelSelect : MonoBehaviour
         PhotoButton.onClick.AddListener(() =>
         {
             SceneManager.LoadScene("Photo");
+        });
+
+        VinxisButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("Vinxis");
         });
     }
 }
