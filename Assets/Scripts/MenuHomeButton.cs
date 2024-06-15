@@ -4,11 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenuButtons : MonoBehaviour
+public class HomeMenuButton : MonoBehaviour
 {
-    public Button playButton;
-    public Button quitButton;
-    public Button helpButton;
+    public Button homeButton;
 
     // Start is called before the first frame update
     void Start()
@@ -24,21 +22,9 @@ public class MainMenuButtons : MonoBehaviour
 
     private void Awake()
     {
-        playButton.onClick.AddListener(() =>
+        homeButton.onClick.AddListener(() =>
         {
             SceneManager.LoadScene("LevelSelect");
         });
-
-        helpButton.onClick.AddListener(() =>
-        {
-            SceneManager.LoadScene("Help");
-        });
-
-        quitButton.onClick.AddListener(() =>
-        {
-            Application.Quit();
-        });
     }
-
-
 }
